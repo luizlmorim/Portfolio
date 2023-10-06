@@ -1,0 +1,88 @@
+.navbar{
+    position: fixed; /*Permite que a nav fique fixada na tela*/
+    top: 0;
+    left: 0;
+    width: 100%; /*o navegador ocupará uma largura de 1005 da tela*/
+    z-index: 10; /* se um elemento está sob ou sobre um outro elemento - irá determinar se o elemento estará mais próximo ou mais afastado da tela.*/
+    background-color: var(--white); /*Chamando uma váriavel*/
+}
+
+/*Especificidade*/
+
+.navbar .navbar__content {
+    padding: 3rem 4rem 1rem;
+/*3rem (parte de cima) , 4rem (nas laterais), 1rem(na parte de baxio)*/
+    display: flex; /*As divs são colocadas em ao lado da outra*/
+    justify-content: space-between; /*Estacamneto entre as divs*/
+}
+
+/*Acessando as listas*/
+.navbar .navbar__content .navbar__links li {
+    display: inline-block;
+}
+
+/*isolando o último li - usamos o not li:not(:last-of-type)*/
+.navbar .navbar__content .navbar__links li:not(:last-of-type) {
+    margin-right: 2rem;
+}
+
+/*acessando o a*/
+.navbar .navbar__content .navbar__links a {
+    padding: 1rem; /*aumenta área do click*/
+    display: inline-block;
+}
+
+.navbar .navbar__content .navbar__links a:hover {
+    color: var(--tertiary-color);
+}
+
+/*Parte responsiva*/
+
+.navbar .navbar__content .navbar__mobile,
+.navbar .navbar__content .navbar__mobile .mobile__links {
+  display: none;
+}
+
+/*O menu humburger só será exibido quando a resolução da tela for de 768px*/
+@media only screen and (max-width: 768px) {
+    .navbar .navbar__content .navbar__links {
+      display: none;
+    } /*Esconde o link quando a tela está em 768px*/
+  
+    .navbar .navbar__content .navbar__mobile {
+      display: flex;
+      align-items: center;
+    } /**/
+  
+    .navbar .navbar__content .navbar__mobile img {
+      width: 3.6rem;
+      height: 3.6rem;
+      cursor: pointer;
+    }
+  
+    .navbar .navbar__content .navbar__mobile.active .mobile__links {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--white);
+      width: 100%;
+      position: absolute;
+      top: 98%;
+      left: 0;
+      padding: 1rem 0;
+      box-shadow: 0 0.4rem 0.5rem rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+  
+    .navbar .navbar__content .navbar__mobile.active .mobile__links li {
+      margin-right: 0;
+    }
+  
+    .navbar .navbar__content .navbar__mobile.active .mobile__links li a {
+      padding: 1rem;
+      display: block;
+      text-align: center;
+    }
+  }
+
+/*OBS: Aplicamos o active para indicar se a class (menu) está aberto ou não - no caso - isso é para ativar o menu no javascript */
+   

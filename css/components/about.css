@@ -1,0 +1,50 @@
+.about {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    scroll-margin-top: 20rem;
+}
+/*Editando a div esquerda*/
+.about .about__left{
+    max-width: 40rem;
+    flex: 1;
+}
+/*parágrafo*/
+.about .about__left p {
+    margin: 1rem 0 2rem;
+  }
+/*ul*/
+
+/*li*/
+.about .about__left ul li {
+    display: inline-block;
+    
+}
+/*a*/
+.about .about__left ul li a {
+    display: inline-block;
+    padding: 1rem;
+  }
+
+/*Editando a div direita*/
+
+.about .about__rigth{
+    flex: 1;
+    max-width: 66rem;
+}
+   
+@media only screen and (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about .about__left{
+        max-width: 66rem;
+        text-align: center;
+    }
+
+    about .about__rigth{
+        text-align: center;
+    }
+}

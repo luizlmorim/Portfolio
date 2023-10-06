@@ -1,0 +1,75 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem; /*A propriedade CSS gap define os espaços (gutters (en-US)) entre as linhas e colunas*/
+    scroll-margin-top: 20rem;
+}
+
+/*Especificidade*/
+
+/*Estilos sobre a div esquerda*/
+header .heard__letf {
+    max-width: 62rem;
+    flex: 1rem;
+}
+
+/*Estilizando os parágrafos dentro da div esquerda*/
+
+header .heard__letf p {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    max-width: 50rem;
+}
+
+/*Iamgem dentro da div direita */
+header .heard__right .hearder__imag{
+    position: relative;
+    line-height: 0%; 
+}
+
+/*Adicionando uma borda na imagem*/
+
+header .header__right .header__image::after {
+    content: '';
+    display: block;
+    width: 10%;
+    height: 10%;
+    border: 1px solid var(--tertiary-color);
+    position: absolute;
+    top: -1.5rem;
+    right: -1.5rem;
+    border-radius: 0.5rem;
+    z-index: -1;
+  }
+  
+header .header__right .header__image .luiz {
+    border-radius: 0.5rem;
+    min-width: 25rem;
+    max-width: 10%;
+  }
+
+header .header__right .header__image .background {
+    position: absolute;
+    top: 4rem;
+    right: 2.5rem;
+    right: -2.5rem;
+    z-index: -1;
+  }
+
+.luiz, .background{
+  width: 60%;
+}
+
+
+  @media only screen and (max-width: 768px) {
+    header {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+  
+    header .header__left p {
+      margin: 2rem auto 4rem;
+    }
+  }
+
